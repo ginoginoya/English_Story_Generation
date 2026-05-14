@@ -3,3 +3,5 @@ fastapi
 uvicorn
 soundfile
 pydantic
+pystray
+Pillow

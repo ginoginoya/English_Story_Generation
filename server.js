@@ -236,9 +236,4 @@ app.post('/api/tts', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    
-    // 自動開啟瀏覽器 (Windows)
-    const url = `http://localhost:${PORT}`;
-    const start = process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open';
-    exec(`${start} ${url}`);
 });

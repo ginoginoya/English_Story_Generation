@@ -13,7 +13,7 @@ if %errorlevel% equ 0 (
 )
 
 :: 1. Virtual Environment Check
-echo [Step 1/5] Checking Virtual Environment...
+echo [Step 1/4] Checking Virtual Environment...
 if not exist venv (
     echo [Note] venv not found. Initializing...
     python -m venv venv
@@ -37,18 +37,15 @@ if not exist "node_modules\" (
 )
 echo.
 
-:: 4. Launch Services
-echo [Step 4/4] Launching Services...
-:: Start TTS Server in background
-start "" venv\Scripts\pythonw tts_server.py
+:: 4. Launch Tray Application
+echo [Step 4/4] Launching Tray Manager...
+:: Start the tray launcher using pythonw (no window)
+start "" venv\Scripts\pythonw tray_launcher.py
 
-:: Main Web Server (Node.js)
+echo.
 echo ==========================================
-echo   TOEIC Helper is now running!
-echo   Local URL: http://localhost:7000
-echo   DO NOT close this window.
-echo   (TTS Engine is loading in the background...)
+echo   TOEIC Helper is now in your SYSTEM TRAY!
+echo   (Check the bottom-right corner icon)
 echo ==========================================
-node server.js
-
-pause
+timeout /t 2
+exit
