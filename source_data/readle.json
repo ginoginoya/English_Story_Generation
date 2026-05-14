@@ -1,0 +1,62 @@
+[
+  {
+    "word": "market share",
+    "definition": "市場佔有率",
+    "category": "企業發展 (Corporate Development)"
+  },
+  {
+    "word": "outsourcing",
+    "definition": "外包",
+    "category": "企業發展 (Corporate Development)"
+  },
+  {
+    "word": "hospitality",
+    "definition": "款待",
+    "category": "外食 (Dining Out)"
+  },
+  {
+    "word": "assets",
+    "definition": "資產",
+    "category": "金融／預算 (Finance and Budgeting)"
+  },
+  {
+    "word": "acquisition",
+    "definition": "收購",
+    "category": "一般商務 (General Business)"
+  },
+  {
+    "word": "appointment",
+    "definition": "預約/看診",
+    "category": "保健 (Health)"
+  },
+  {
+    "word": "itinerary",
+    "definition": "行程表",
+    "category": "旅遊 (Travel)"
+  },
+  {
+    "word": "layoff",
+    "definition": "解雇",
+    "category": "人事 (Personnel)"
+  },
+  {
+    "word": "payroll",
+    "definition": "發薪名單",
+    "category": "人事 (Personnel)"
+  },
+  {
+    "word": "vendor",
+    "definition": "供應商",
+    "category": "採購 (Purchasing)"
+  },
+  {
+    "word": "inventory",
+    "definition": "庫存",
+    "category": "採購 (Purchasing)"
+  },
+  {
+    "word": "audit",
+    "definition": "審計",
+    "category": "財務 (Finance)"
+  }
+]

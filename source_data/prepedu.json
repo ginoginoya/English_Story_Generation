@@ -1,0 +1,803 @@
+[
+  {
+    "word": "collaborate",
+    "pos": "v.",
+    "ipa": "/kəˈlæbəreɪt/",
+    "definition": "合作；協作",
+    "example_en": "We need to collaborate with the marketing team on this project.",
+    "example_zh": "我們需要與行銷團隊在這個專案上合作。",
+    "category": "商業會議（Meetings & Conferences）"
+  },
+  {
+    "word": "negotiate",
+    "pos": "v.",
+    "ipa": "/nɪˈɡəʊʃieɪt/",
+    "definition": "談判；協商",
+    "example_en": "The two companies are negotiating a new partnership.",
+    "example_zh": "這兩家公司正在洽談新的合作關係。",
+    "category": "商業會議（Meetings & Conferences）"
+  },
+  {
+    "word": "confirm",
+    "pos": "v.",
+    "ipa": "/kənˈfɜːm/",
+    "definition": "確認",
+    "example_en": "Please confirm your attendance by Friday.",
+    "example_zh": "請在週五前確認您的出席情況。",
+    "category": "商業會議（Meetings & Conferences）"
+  },
+  {
+    "word": "discuss",
+    "pos": "v.",
+    "ipa": "/dɪˈskʌs/",
+    "definition": "討論",
+    "example_en": "We will discuss the budget in the next meeting.",
+    "example_zh": "我們將在下次會議討論預算。",
+    "category": "商業會議（Meetings & Conferences）"
+  },
+  {
+    "word": "participate",
+    "pos": "v.",
+    "ipa": "/pɑːˈtɪsɪpeɪt/",
+    "definition": "參加；參與",
+    "example_en": "All staff members are encouraged to participate in the seminar.",
+    "example_zh": "鼓勵所有員工參加研討會。",
+    "category": "商業會議（Meetings & Conferences）"
+  },
+  {
+    "word": "implement",
+    "pos": "v.",
+    "ipa": "/ˈɪmplɪment/",
+    "definition": "執行；實施",
+    "example_en": "The company decided to implement a new policy.",
+    "example_zh": "公司決定實施一項新政策。",
+    "category": "商業會議（Meetings & Conferences）"
+  },
+  {
+    "word": "objective",
+    "pos": "n.",
+    "ipa": "/əbˈdʒektɪv/",
+    "definition": "目標；目的",
+    "example_en": "The main objective of the meeting is to review quarterly performance.",
+    "example_zh": "本次會議的主要目的是檢討季度績效。",
+    "category": "商業會議（Meetings & Conferences）"
+  },
+  {
+    "word": "outcome",
+    "pos": "n.",
+    "ipa": "/ˈaʊtkʌm/",
+    "definition": "結果；成果",
+    "example_en": "The positive outcome of the negotiations benefited both companies.",
+    "example_zh": "談判的正面結果使雙方公司皆受益。",
+    "category": "商業會議（Meetings & Conferences）"
+  },
+  {
+    "word": "recruit",
+    "pos": "v.",
+    "ipa": "/rɪˈkruːt/",
+    "definition": "招募",
+    "example_en": "The company plans to recruit more engineers next year.",
+    "example_zh": "公司計劃明年招募更多工程師。",
+    "category": "人力資源（Human Resources）"
+  },
+  {
+    "word": "candidate",
+    "pos": "n.",
+    "ipa": "/ˈkændɪdət/",
+    "definition": "候選人",
+    "example_en": "Three candidates have been shortlisted for the manager position.",
+    "example_zh": "已有三位候選人入圍經理職位的最終名單。",
+    "category": "人力資源（Human Resources）"
+  },
+  {
+    "word": "supervisor",
+    "pos": "n.",
+    "ipa": "/ˈsuːpəvaɪzə/",
+    "definition": "主管；監督者",
+    "example_en": "The supervisor will review your performance next week.",
+    "example_zh": "主管將於下週審查你的工作表現。",
+    "category": "人力資源（Human Resources）"
+  },
+  {
+    "word": "training",
+    "pos": "n.",
+    "ipa": "/ˈtreɪnɪŋ/",
+    "definition": "訓練；培訓",
+    "example_en": "New staff members must attend orientation training.",
+    "example_zh": "新進員工必須參加入職培訓。",
+    "category": "人力資源（Human Resources）"
+  },
+  {
+    "word": "benefit",
+    "pos": "n.",
+    "ipa": "/ˈbenɪfɪt/",
+    "definition": "福利",
+    "example_en": "The company offers competitive salary and benefits packages.",
+    "example_zh": "公司提供具有競爭力的薪資與福利方案。",
+    "category": "人力資源（Human Resources）"
+  },
+  {
+    "word": "vacancy",
+    "pos": "n.",
+    "ipa": "/ˈveɪkənsi/",
+    "definition": "職缺",
+    "example_en": "There is currently a vacancy for an office manager.",
+    "example_zh": "目前有一個辦公室經理的職缺。",
+    "category": "人力資源（Human Resources）"
+  },
+  {
+    "word": "evaluation",
+    "pos": "n.",
+    "ipa": "/ɪˌvæljuˈeɪʃən/",
+    "definition": "評核；評價",
+    "example_en": "Employee evaluations take place every six months.",
+    "example_zh": "員工評核每六個月進行一次。",
+    "category": "人力資源（Human Resources）"
+  },
+  {
+    "word": "campaign",
+    "pos": "n.",
+    "ipa": "/kæmˈpeɪn/",
+    "definition": "活動；戰略",
+    "example_en": "The new advertising campaign increases brand awareness significantly.",
+    "example_zh": "新的廣告活動大幅提升了品牌知名度。",
+    "category": "行銷與廣告（Marketing & Advertising）"
+  },
+  {
+    "word": "promotion",
+    "pos": "n.",
+    "ipa": "/prəˈmouʃən/",
+    "definition": "促銷；晉升",
+    "example_en": "The company is running a promotion on its new line of clothing.",
+    "example_zh": "公司正在對其新服裝系列進行促銷。",
+    "category": "行銷與廣告（Marketing & Advertising）"
+  },
+  {
+    "word": "advertise",
+    "pos": "v.",
+    "ipa": "/ˈædvətaɪz/",
+    "definition": "登廣告",
+    "example_en": "They plan to advertise the new product on social media.",
+    "example_zh": "他們計劃在社群媒體上為新產品登廣告。",
+    "category": "行銷與廣告（Marketing & Advertising）"
+  },
+  {
+    "word": "survey",
+    "pos": "n./v.",
+    "ipa": "/ˈsɜːveɪ/",
+    "definition": "調查",
+    "example_en": "Customer satisfaction surveys are important for market research.",
+    "example_zh": "客戶滿意度調查對市場研究非常重要。",
+    "category": "行銷與廣告（Marketing & Advertising）"
+  },
+  {
+    "word": "target",
+    "pos": "n./v.",
+    "ipa": "/ˈtɑːɡɪt/",
+    "definition": "目標",
+    "example_en": "Our target audience is young professionals.",
+    "example_zh": "我們的目標受眾是年輕專業人士。",
+    "category": "行銷與廣告（Marketing & Advertising）"
+  },
+  {
+    "word": "brand",
+    "pos": "n.",
+    "ipa": "/brænd/",
+    "definition": "品牌",
+    "example_en": "The company is known for its strong brand reputation.",
+    "example_zh": "該公司以其強大的品牌聲譽而聞名。",
+    "category": "行銷與廣告（Marketing & Advertising）"
+  },
+  {
+    "word": "contract",
+    "pos": "n.",
+    "ipa": "/ˈkɒntrækt/",
+    "definition": "合約",
+    "example_en": "Please sign the contract and return it to the HR department.",
+    "example_zh": "請簽署合約並將其寄回人資部門。",
+    "category": "合約與協議（Contracts & Negotiations）"
+  },
+  {
+    "word": "agreement",
+    "pos": "n.",
+    "ipa": "/əˈɡriːmənt/",
+    "definition": "協議",
+    "example_en": "The two parties reached an agreement after long negotiations.",
+    "example_zh": "雙方經過長期談判後達成協議。",
+    "category": "合約與協議（Contracts & Negotiations）"
+  },
+  {
+    "word": "signature",
+    "pos": "n.",
+    "ipa": "/ˈsɪɡnətʃə/",
+    "definition": "簽名",
+    "example_en": "We need your signature on this document before we can proceed.",
+    "example_zh": "在我們繼續之前，我們需要您在此文件上的簽名。",
+    "category": "合約與協議（Contracts & Negotiations）"
+  },
+  {
+    "word": "terms",
+    "pos": "n.",
+    "ipa": "/tɜːmz/",
+    "definition": "條款",
+    "example_en": "You should read the terms and conditions carefully before signing.",
+    "example_zh": "簽署前應仔細閱讀條款和條件。",
+    "category": "合約與協議（Contracts & Negotiations）"
+  },
+  {
+    "word": "penalty",
+    "pos": "n.",
+    "ipa": "/ˈpenəlti/",
+    "definition": "罰款；處罰",
+    "example_en": "There is a penalty for late payment of the invoice.",
+    "example_zh": "逾期支付發票將面臨罰款。",
+    "category": "合約與協議（Contracts & Negotiations）"
+  },
+  {
+    "word": "audit",
+    "pos": "n./v.",
+    "ipa": "/ˈɔːdɪt/",
+    "definition": "審計；查帳",
+    "example_en": "The company will undergo a financial audit next month.",
+    "example_zh": "公司下個月將進行財務審計。",
+    "category": "財務與會計（Finance & Accounting）"
+  },
+  {
+    "word": "budget",
+    "pos": "n./v.",
+    "ipa": "/ˈbʌdʒɪt/",
+    "definition": "預算",
+    "example_en": "We need to stay within the budget for this marketing campaign.",
+    "example_zh": "我們需要將這次行銷活動控制在預算內。",
+    "category": "財務與會計（Finance & Accounting）"
+  },
+  {
+    "word": "revenue",
+    "pos": "n.",
+    "ipa": "/ˈrevənjuː/",
+    "definition": "收入；營收",
+    "example_en": "The company's annual revenue increased by 15% this year.",
+    "example_zh": "公司今年的年營收增長了15%。",
+    "category": "財務與會計（Finance & Accounting）"
+  },
+  {
+    "word": "expenditure",
+    "pos": "n.",
+    "ipa": "/ɪkˈspendɪtʃə/",
+    "definition": "支出；花費",
+    "example_en": "The finance team is reviewing the monthly expenditure report.",
+    "example_zh": "財務團隊正在審核每月支出報告。",
+    "category": "財務與會計（Finance & Accounting）"
+  },
+  {
+    "word": "profit",
+    "pos": "n.",
+    "ipa": "/ˈprɒfɪt/",
+    "definition": "利潤",
+    "example_en": "The company's profit margin has improved significantly.",
+    "example_zh": "公司的利潤率有了顯著提升。",
+    "category": "財務與會計（Finance & Accounting）"
+  },
+  {
+    "word": "reimburse",
+    "pos": "v.",
+    "ipa": "/ˌriːɪmˈbɜːs/",
+    "definition": "報銷；償還",
+    "example_en": "The company will reimburse you for your travel expenses.",
+    "example_zh": "公司將報銷您的旅費。",
+    "category": "財務與會計（Finance & Accounting）"
+  },
+  {
+    "word": "inventory",
+    "pos": "n.",
+    "ipa": "/ˈɪnvəntri/",
+    "definition": "庫存",
+    "example_en": "The store manager will check the inventory before placing a new order.",
+    "example_zh": "店長在下新訂單前會先檢查庫存。",
+    "category": "採購與訂單（Purchasing & Ordering）"
+  },
+  {
+    "word": "invoice",
+    "pos": "n./v.",
+    "ipa": "/ˈɪnvɔɪs/",
+    "definition": "發票；清單",
+    "example_en": "The supplier will send an invoice for the office supplies tomorrow morning.",
+    "example_zh": "供應商明天早上將發送辦公用品的發票。",
+    "category": "採購與訂單（Purchasing & Ordering）"
+  },
+  {
+    "word": "shipment",
+    "pos": "n.",
+    "ipa": "/ˈʃɪpmənt/",
+    "definition": "運輸；出貨",
+    "example_en": "The local factory will prepare the shipment for international delivery next week.",
+    "example_zh": "當地工廠下週將準備國際快遞的出貨。",
+    "category": "採購與訂單（Purchasing & Ordering）"
+  },
+  {
+    "word": "vendor",
+    "pos": "n.",
+    "ipa": "/ˈvendə/",
+    "definition": "供應商；小販",
+    "example_en": "The event organizer will select a reliable food vendor for the party.",
+    "example_zh": "活動籌辦者將為派對選擇可靠的食物供應商。",
+    "category": "採購與訂單（Purchasing & Ordering）"
+  },
+  {
+    "word": "order",
+    "pos": "n./v.",
+    "ipa": "/ˈɔːdə/",
+    "definition": "訂單；訂購",
+    "example_en": "You can place your order online or over the phone.",
+    "example_zh": "您可以透過網路或電話下單。",
+    "category": "採購與訂單（Purchasing & Ordering）"
+  },
+  {
+    "word": "procedure",
+    "pos": "n.",
+    "ipa": "/prəˈsiːdʒə/",
+    "definition": "程序；手續",
+    "example_en": "All employees must follow the established safety procedures.",
+    "example_zh": "所有員工都必須遵守既定的安全程序。",
+    "category": "辦公室日常（Office Life & Procedures）"
+  },
+  {
+    "word": "equipment",
+    "pos": "n.",
+    "ipa": "/ɪˈkwɪpmənt/",
+    "definition": "設備；器材",
+    "example_en": "The IT department maintains all computer equipment in the building.",
+    "example_zh": "IT 部門負責維護大樓內的所有電腦設備。",
+    "category": "辦公室日常（Office Life & Procedures）"
+  },
+  {
+    "word": "administrative",
+    "pos": "adj.",
+    "ipa": "/ədˈmɪnɪstrətɪv/",
+    "definition": "行政的",
+    "example_en": "The job involves many administrative tasks such as filing and scheduling.",
+    "example_zh": "這份工作涉及許多行政任務，如存檔和排程。",
+    "category": "辦公室日常（Office Life & Procedures）"
+  },
+  {
+    "word": "document",
+    "pos": "n./v.",
+    "ipa": "/ˈdɒkjʊmənt/",
+    "definition": "文件；記錄",
+    "example_en": "Please ensure all documents are signed and dated before submission.",
+    "example_zh": "請確保所有文件在提交前都已簽名並標註日期。",
+    "category": "辦公室日常（Office Life & Procedures）"
+  },
+  {
+    "word": "correspondence",
+    "pos": "n.",
+    "ipa": "/ˌkɒrɪˈspɒndəns/",
+    "definition": "通訊；信件",
+    "example_en": "The secretary handles all incoming and outgoing correspondence.",
+    "example_zh": "秘書處理所有來往信件。",
+    "category": "辦公室日常（Office Life & Procedures）"
+  },
+  {
+    "word": "facility",
+    "pos": "n.",
+    "ipa": "/fəˈsɪlɪti/",
+    "definition": "設施；場所",
+    "example_en": "The new training facility will open next month.",
+    "example_zh": "新的培訓設施將於下個月開放。",
+    "category": "辦公室日常（Office Life & Procedures）"
+  },
+  {
+    "word": "colleague",
+    "pos": "n.",
+    "ipa": "/ˈkɒliːɡ/",
+    "definition": "同事",
+    "example_en": "I'm working on a joint project with my colleagues from the finance department.",
+    "example_zh": "我正在與財務部門的同事合作一個共同專案。",
+    "category": "辦公室日常（Office Life & Procedures）"
+  },
+  {
+    "word": "network",
+    "pos": "n.",
+    "ipa": "/ˈnetwɜːk/",
+    "definition": "網路",
+    "example_en": "The network administrator monitors system performance continuously.",
+    "example_zh": "網路管理員持續監控系統效能。",
+    "category": "資訊科技與電腦（IT & Computer）"
+  },
+  {
+    "word": "database",
+    "pos": "n.",
+    "ipa": "/ˈdeɪtəbeɪs/",
+    "definition": "資料庫",
+    "example_en": "Customer information is stored securely in the central database.",
+    "example_zh": "顧客資訊安全地儲存在中央資料庫中。",
+    "category": "資訊科技與電腦（IT & Computer）"
+  },
+  {
+    "word": "download",
+    "pos": "v./n.",
+    "ipa": "/ˌdaʊnˈləʊd/",
+    "definition": "下載",
+    "example_en": "You can download the software from our official website.",
+    "example_zh": "您可以從我們的官方網站下載軟體。",
+    "category": "資訊科技與電腦（IT & Computer）"
+  },
+  {
+    "word": "upload",
+    "pos": "v./n.",
+    "ipa": "/ˌʌpˈləʊd/",
+    "definition": "上傳",
+    "example_en": "Please upload the files to the shared folder.",
+    "example_zh": "請將檔案上傳到共享資料夾。",
+    "category": "資訊科技與電腦（IT & Computer）"
+  },
+  {
+    "word": "update",
+    "pos": "n./v.",
+    "ipa": "/ˌʌpˈdeɪt/",
+    "definition": "更新",
+    "example_en": "The app developer will update the game software with new features monthly.",
+    "example_zh": "應用程式開發者將每月用新功能更新遊戲軟體。",
+    "category": "資訊科技與電腦（IT & Computer）"
+  },
+  {
+    "word": "security",
+    "pos": "n.",
+    "ipa": "/sɪˈkjʊərɪti/",
+    "definition": "安全",
+    "example_en": "Data security is a top priority for our IT department.",
+    "example_zh": "數據安全是我們 IT 部門的首要任務。",
+    "category": "資訊科技與電腦（IT & Computer）"
+  },
+  {
+    "word": "travel",
+    "pos": "n./v.",
+    "ipa": "/ˈtrævəl/",
+    "definition": "旅行；出差",
+    "example_en": "The business consultant will travel to three different cities next month.",
+    "example_zh": "商業顧問下個月將前往三個不同的城市出差。",
+    "category": "旅遊與交通（Travel & Transportation）"
+  },
+  {
+    "word": "transfer",
+    "pos": "n./v.",
+    "ipa": "/ˈtrænsfə/",
+    "definition": "轉機；轉車",
+    "example_en": "Airline passengers must transfer to a different terminal for international flights.",
+    "example_zh": "航空乘客必須轉到不同航廈搭乘國際航班。",
+    "category": "旅遊與交通（Travel & Transportation）"
+  },
+  {
+    "word": "itinerary",
+    "pos": "n.",
+    "ipa": "/aɪˈtɪnərəri/",
+    "definition": "行程表",
+    "example_en": "The assistant emailed the full travel itinerary to all conference participants.",
+    "example_zh": "助理已將完整的行程表寄給所有會議與會者。",
+    "category": "旅遊與交通（Travel & Transportation）"
+  },
+  {
+    "word": "accommodation",
+    "pos": "n.",
+    "ipa": "/əˌkɒməˈdeɪʃən/",
+    "definition": "住宿",
+    "example_en": "The hotel offers luxury accommodations for business travelers.",
+    "example_zh": "這家飯店為商務旅客提供高級住宿。",
+    "category": "旅遊與交通（Travel & Transportation）"
+  },
+  {
+    "word": "reservation",
+    "pos": "n.",
+    "ipa": "/ˌrezəˈveɪʃən/",
+    "definition": "預訂",
+    "example_en": "She made a hotel reservation for next week's trip to Tokyo.",
+    "example_zh": "她為下週東京之行預訂了飯店。",
+    "category": "旅遊與交通（Travel & Transportation）"
+  },
+  {
+    "word": "luggage",
+    "pos": "n.",
+    "ipa": "/ˈlʌɡɪdʒ/",
+    "definition": "行李",
+    "example_en": "Passengers should not leave luggage unattended at the airport.",
+    "example_zh": "乘客不應將行李無人看管地留在機場。",
+    "category": "旅遊與交通（Travel & Transportation）"
+  },
+  {
+    "word": "amenity",
+    "pos": "n.",
+    "ipa": "/əˈmiːnəti/",
+    "definition": "便利設施",
+    "example_en": "The hotel provides basic amenities like free Wi-Fi and breakfast.",
+    "example_zh": "飯店提供基本的便利設施，如免費 Wi-Fi 和早餐。",
+    "category": "住宿與酒店（Hotels & Accommodation）"
+  },
+  {
+    "word": "check-in",
+    "pos": "n./v.",
+    "ipa": "/ˈtʃekɪn/",
+    "definition": "入住登記",
+    "example_en": "Guest check-in starts at 3:00 PM in the lobby.",
+    "example_zh": "客人的入住登記從下午 3 點在飯店大廳開始。",
+    "category": "住宿與酒店（Hotels & Accommodation）"
+  },
+  {
+    "word": "hospitality",
+    "pos": "n.",
+    "ipa": "/ˌhɒspɪˈtæləti/",
+    "definition": "款待；飯店業",
+    "example_en": "We were impressed by the warm hospitality of the hotel staff.",
+    "example_zh": "我們對飯店員工熱情的款待印象深刻。",
+    "category": "住宿與酒店（Hotels & Accommodation）"
+  },
+  {
+    "word": "concierge",
+    "pos": "n.",
+    "ipa": "/ˌkɒnsiˈeəʒ/",
+    "definition": "禮賓人員",
+    "example_en": "The concierge can help you arrange local tours and restaurant bookings.",
+    "example_zh": "禮賓人員可以幫助您安排當地導覽和餐廳預訂。",
+    "category": "住宿與酒店（Hotels & Accommodation）"
+  },
+  {
+    "word": "policy",
+    "pos": "n.",
+    "ipa": "/ˈpɒləsi/",
+    "definition": "政策；保單",
+    "example_en": "Please review the insurance policy before signing.",
+    "example_zh": "簽署前請先閱讀保險單。",
+    "category": "醫療與保險（Health & Insurance）"
+  },
+  {
+    "word": "coverage",
+    "pos": "n.",
+    "ipa": "/ˈkʌvərɪdʒ/",
+    "definition": "保險範圍",
+    "example_en": "Does your insurance policy include coverage for travel accidents?",
+    "example_zh": "您的保險政策是否包含旅遊意外險？",
+    "category": "醫療與保險（Health & Insurance）"
+  },
+  {
+    "word": "premium",
+    "pos": "n.",
+    "ipa": "/ˈpriːmiəm/",
+    "definition": "保險費",
+    "example_en": "The monthly premium for this health insurance is $50.",
+    "example_zh": "這份健康保險的每月保費為 50 美元。",
+    "category": "醫療與保險（Health & Insurance）"
+  },
+  {
+    "word": "claim",
+    "pos": "n./v.",
+    "ipa": "/kleɪm/",
+    "definition": "理賠申請",
+    "example_en": "You can file a claim for medical expenses after your surgery.",
+    "example_zh": "您可以在手術後申請醫療費用的理賠。",
+    "category": "醫療與保險（Health & Insurance）"
+  },
+  {
+    "word": "prescription",
+    "pos": "n.",
+    "ipa": "/prɪˈskrɪpʃən/",
+    "definition": "處方箋",
+    "example_en": "You will need a doctor's prescription to buy this medication.",
+    "example_zh": "您需要醫生的處方箋才能購買這種藥物。",
+    "category": "醫療與保險（Health & Insurance）"
+  },
+  {
+    "word": "customer",
+    "pos": "n.",
+    "ipa": "/ˈkʌstəmə/",
+    "definition": "顧客",
+    "example_en": "Customer satisfaction surveys help improve service quality.",
+    "example_zh": "顧客滿意度調查有助於提升服務品質。",
+    "category": "零售與顧客服務（Retail & Customer Service）"
+  },
+  {
+    "word": "service",
+    "pos": "n.",
+    "ipa": "/ˈsɜːvɪs/",
+    "definition": "服務",
+    "example_en": "Excellent customer service is essential for business success.",
+    "example_zh": "優質的顧客服務對企業成功至關重要。",
+    "category": "零售與顧客服務（Retail & Customer Service）"
+  },
+  {
+    "word": "refund",
+    "pos": "n./v.",
+    "ipa": "/ˈrɪːfʌnd/",
+    "definition": "退款",
+    "example_en": "Customers can request a full refund within 30 days of purchase.",
+    "example_zh": "顧客可以在購買後 30 天內要求全額退款。",
+    "category": "零售與顧客服務（Retail & Customer Service）"
+  },
+  {
+    "word": "complaint",
+    "pos": "n.",
+    "ipa": "/kəmˈpleɪnt/",
+    "definition": "投訴",
+    "example_en": "The management will address all customer complaints promptly.",
+    "example_zh": "管理層將迅速處理所有客戶投訴。",
+    "category": "零售與顧客服務（Retail & Customer Service）"
+  },
+  {
+    "word": "feedback",
+    "pos": "n.",
+    "ipa": "/ˈfiːdbæk/",
+    "definition": "回饋",
+    "example_en": "We value constructive feedback from our clients to improve our products.",
+    "example_zh": "我們重視客戶提供的建設性回饋，以改進我們的產品。",
+    "category": "零售與顧客服務（Retail & Customer Service）"
+  },
+  {
+    "word": "manufacturing",
+    "pos": "n.",
+    "ipa": "/ˌmænjʊˈfæktʃərɪŋ/",
+    "definition": "製造業",
+    "example_en": "The manufacturing industry is facing new challenges this year.",
+    "example_zh": "製造業今年正面臨新的挑戰。",
+    "category": "生產與品質管理（Manufacturing & Quality Control）"
+  },
+  {
+    "word": "production",
+    "pos": "n.",
+    "ipa": "/prəˈdʌkʃən/",
+    "definition": "生產",
+    "example_en": "The factory increased production to meet the high demand.",
+    "example_zh": "工廠增加了產量以滿足高需求。",
+    "category": "生產與品質管理（Manufacturing & Quality Control）"
+  },
+  {
+    "word": "quality",
+    "pos": "n.",
+    "ipa": "/ˈkwɒləti/",
+    "definition": "品質",
+    "example_en": "Quality control is vital for maintaining product standards.",
+    "example_zh": "品質控管對於維持產品標準至關重要。",
+    "category": "生產與品質管理（Manufacturing & Quality Control）"
+  },
+  {
+    "word": "process",
+    "pos": "n.",
+    "ipa": "/ˈprəʊses/",
+    "definition": "過程；工序",
+    "example_en": "The manufacturing process has been streamlined for better efficiency.",
+    "example_zh": "製造過程已經簡化以提高效率。",
+    "category": "生產與品質管理（Manufacturing & Quality Control）"
+  },
+  {
+    "word": "inspection",
+    "pos": "n.",
+    "ipa": "/ɪnˈspekʃən/",
+    "definition": "檢驗；檢查",
+    "example_en": "Regular safety inspections are mandatory in all industrial facilities.",
+    "example_zh": "在所有工業設施中，定期的安全檢查都是強制性的。",
+    "category": "生產與品質管理（Manufacturing & Quality Control）"
+  },
+  {
+    "word": "interest",
+    "pos": "n.",
+    "ipa": "/ˈɪntrəst/",
+    "definition": "利息",
+    "example_en": "High interest rates can encourage people to save more money.",
+    "example_zh": "高利率可以鼓勵人們存更多錢。",
+    "category": "投資與銀行（Investment & Banking）"
+  },
+  {
+    "word": "dividend",
+    "pos": "n.",
+    "ipa": "/ˈdɪvɪdend/",
+    "definition": "股息",
+    "example_en": "Shareholders receive annual dividends based on company profits.",
+    "example_zh": "股東根據公司獲利領取年度股息。",
+    "category": "投資與銀行（Investment & Banking）"
+  },
+  {
+    "word": "portfolio",
+    "pos": "n.",
+    "ipa": "/ˌpɔːtˈfəʊliəʊ/",
+    "definition": "投資組合",
+    "example_en": "A diversified investment portfolio helps reduce financial risk.",
+    "example_zh": "多元化的投資組合有助於降低財務風險。",
+    "category": "投資與銀行（Investment & Banking）"
+  },
+  {
+    "word": "stock",
+    "pos": "n.",
+    "ipa": "/stɒk/",
+    "definition": "股票；庫存",
+    "example_en": "Many people invest in the stock market to build wealth over time.",
+    "example_zh": "許多人投資股市以隨著時間累積財富。",
+    "category": "投資與銀行（Investment & Banking）"
+  },
+  {
+    "word": "transaction",
+    "pos": "n.",
+    "ipa": "/trænˈzækʃən/",
+    "definition": "交易",
+    "example_en": "The online banking system records every transaction automatically.",
+    "example_zh": "網路銀行系統會自動記錄每筆交易。",
+    "category": "投資與銀行（Investment & Banking）"
+  },
+  {
+    "word": "attachment",
+    "pos": "n.",
+    "ipa": "/əˈtætʃmənt/",
+    "definition": "附件",
+    "example_en": "Please find the revised contract in the email attachment.",
+    "example_zh": "請在電子郵件附件中查看修訂後的合約。",
+    "category": "電子通訊（Email & Correspondence）"
+  },
+  {
+    "word": "subject",
+    "pos": "n.",
+    "ipa": "/ˈsʌbdʒekt/",
+    "definition": "主旨；主題",
+    "example_en": "The email subject line should be clear and concise.",
+    "example_zh": "電子郵件的主旨欄應清晰簡潔。",
+    "category": "電子通訊（Email & Correspondence）"
+  },
+  {
+    "word": "CC",
+    "pos": "v./n.",
+    "ipa": "/ˌsiːˈsiː/",
+    "definition": "副本",
+    "example_en": "Please CC the department head on all project-related emails.",
+    "example_zh": "請將所有與專案相關的電子郵件副本寄送給部門主管。",
+    "category": "電子通訊（Email & Correspondence）"
+  },
+  {
+    "word": "forward",
+    "pos": "v.",
+    "ipa": "/ˈfɔːwəd/",
+    "definition": "轉寄",
+    "example_en": "I will forward your inquiry to the relevant department.",
+    "example_zh": "我將把您的詢問轉寄給相關部門。",
+    "category": "電子通訊（Email & Correspondence）"
+  },
+  {
+    "word": "recipient",
+    "pos": "n.",
+    "ipa": "/rɪˈsɪpiənt/",
+    "definition": "收件人",
+    "example_en": "Make sure the recipient's email address is correct before hitting send.",
+    "example_zh": "在點擊發送前，請確保收件人的電子郵件地址正確。",
+    "category": "電子通訊（Email & Correspondence）"
+  },
+  {
+    "word": "affect",
+    "pos": "v.",
+    "ipa": "/əˈfekt/",
+    "definition": "影響",
+    "example_en": "The changes will affect our productivity.",
+    "example_zh": "這些變化將影響我們的生產力。",
+    "category": "常見混淆字對比"
+  },
+  {
+    "word": "effect",
+    "pos": "n.",
+    "ipa": "/ɪˈfekt/",
+    "definition": "效果；結果",
+    "example_en": "The new policy had a positive effect on sales.",
+    "example_zh": "新政策對銷售產生了積極影響。",
+    "category": "常見混淆字對比"
+  },
+  {
+    "word": "call it a day",
+    "pos": "idiom",
+    "ipa": "N/A",
+    "definition": "收工",
+    "example_en": "We've been working for ten hours; let's call it a day.",
+    "example_zh": "我們已經工作了十個小時；收工吧。",
+    "category": "商業慣用語精選"
+  },
+  {
+    "word": "on the same page",
+    "pos": "idiom",
+    "ipa": "N/A",
+    "definition": "達成共識",
+    "example_en": "We need to make sure everyone is on the same page.",
+    "example_zh": "我們需要確保每個人都達成共識。",
+    "category": "商業慣用語精選"
+  }
+]

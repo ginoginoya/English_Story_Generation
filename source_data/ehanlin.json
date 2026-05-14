@@ -1,0 +1,327 @@
+[
+  {
+    "word": "acquisition",
+    "definition": "收購",
+    "category": "企業發展 (Corporate Development)"
+  },
+  {
+    "word": "expansion",
+    "definition": "擴張；膨脹",
+    "category": "企業發展 (Corporate Development)"
+  },
+  {
+    "word": "merger",
+    "definition": "合併",
+    "category": "企業發展 (Corporate Development)"
+  },
+  {
+    "word": "restructure",
+    "definition": "重組；改組",
+    "category": "企業發展 (Corporate Development)"
+  },
+  {
+    "word": "subsidiary",
+    "definition": "子公司",
+    "category": "企業發展 (Corporate Development)"
+  },
+  {
+    "word": "agenda",
+    "definition": "議程",
+    "category": "辦公室／行政 (Offices)"
+  },
+  {
+    "word": "administrative",
+    "definition": "行政的",
+    "category": "辦公室／行政 (Offices)"
+  },
+  {
+    "word": "clerical",
+    "definition": "辦公室的；書記的",
+    "category": "辦公室／行政 (Offices)"
+  },
+  {
+    "word": "coordinator",
+    "definition": "協調者",
+    "category": "辦公室／行政 (Offices)"
+  },
+  {
+    "word": "executive",
+    "definition": "執行長；主管",
+    "category": "辦公室／行政 (Offices)"
+  },
+  {
+    "word": "assignment",
+    "definition": "任務；工作",
+    "category": "商務 (General Business)"
+  },
+  {
+    "word": "collaboration",
+    "definition": "合作",
+    "category": "商務 (General Business)"
+  },
+  {
+    "word": "deadline",
+    "definition": "截止日期",
+    "category": "商務 (General Business)"
+  },
+  {
+    "word": "proposal",
+    "definition": "提案",
+    "category": "商務 (General Business)"
+  },
+  {
+    "word": "strategy",
+    "definition": "策略",
+    "category": "商務 (General Business)"
+  },
+  {
+    "word": "amortization",
+    "definition": "攤銷",
+    "category": "財務及預算 (Finance and Budgeting)"
+  },
+  {
+    "word": "audit",
+    "definition": "查帳；審計",
+    "category": "財務及預算 (Finance and Budgeting)"
+  },
+  {
+    "word": "budget",
+    "definition": "預算",
+    "category": "財務及預算 (Finance and Budgeting)"
+  },
+  {
+    "word": "deficit",
+    "definition": "赤字",
+    "category": "財務及預算 (Finance and Budgeting)"
+  },
+  {
+    "word": "revenue",
+    "definition": "營收",
+    "category": "財務及預算 (Finance and Budgeting)"
+  },
+  {
+    "word": "appoint",
+    "definition": "任命",
+    "category": "人事管理 (Personnel)"
+  },
+  {
+    "word": "benefits",
+    "definition": "福利",
+    "category": "人事管理 (Personnel)"
+  },
+  {
+    "word": "pension",
+    "definition": "退休金",
+    "category": "人事管理 (Personnel)"
+  },
+  {
+    "word": "recruit",
+    "definition": "招募",
+    "category": "人事管理 (Personnel)"
+  },
+  {
+    "word": "redundancy",
+    "definition": "裁員；冗餘",
+    "category": "人事管理 (Personnel)"
+  },
+  {
+    "word": "available",
+    "definition": "可獲得的；可用的",
+    "category": "採購 (Purchasing)"
+  },
+  {
+    "word": "inventory",
+    "definition": "庫存",
+    "category": "採購 (Purchasing)"
+  },
+  {
+    "word": "invoice",
+    "definition": "發票",
+    "category": "採購 (Purchasing)"
+  },
+  {
+    "word": "rebate",
+    "definition": "退稅；折扣",
+    "category": "採購 (Purchasing)"
+  },
+  {
+    "word": "supplier",
+    "definition": "供應商",
+    "category": "採購 (Purchasing)"
+  },
+  {
+    "word": "assembly",
+    "definition": "組裝",
+    "category": "製造 (Manufacturing)"
+  },
+  {
+    "word": "component",
+    "definition": "零件",
+    "category": "製造 (Manufacturing)"
+  },
+  {
+    "word": "defect",
+    "definition": "缺點；瑕疵",
+    "category": "製造 (Manufacturing)"
+  },
+  {
+    "word": "logistics",
+    "definition": "物流",
+    "category": "製造 (Manufacturing)"
+  },
+  {
+    "word": "maintenance",
+    "definition": "維修；保養",
+    "category": "製造 (Manufacturing)"
+  },
+  {
+    "word": "capacity",
+    "definition": "容量",
+    "category": "電子、科技 (Technical Areas)"
+  },
+  {
+    "word": "innovation",
+    "definition": "創新",
+    "category": "電子、科技 (Technical Areas)"
+  },
+  {
+    "word": "interface",
+    "definition": "介面",
+    "category": "電子、科技 (Technical Areas)"
+  },
+  {
+    "word": "software",
+    "definition": "軟體",
+    "category": "電子、科技 (Technical Areas)"
+  },
+  {
+    "word": "specification",
+    "definition": "規格",
+    "category": "電子、科技 (Technical Areas)"
+  },
+  {
+    "word": "architecture",
+    "definition": "建築業；建築物",
+    "category": "房屋、產權 (Housing／Corporate Property)"
+  },
+  {
+    "word": "lease",
+    "definition": "租約",
+    "category": "房屋、產權 (Housing／Corporate Property)"
+  },
+  {
+    "word": "mortgage",
+    "definition": "抵押貸款",
+    "category": "房屋、產權 (Housing／Corporate Property)"
+  },
+  {
+    "word": "real estate",
+    "definition": "房地產",
+    "category": "房屋、產權 (Housing／Corporate Property)"
+  },
+  {
+    "word": "tenant",
+    "definition": "房客",
+    "category": "房屋、產權 (Housing／Corporate Property)"
+  },
+  {
+    "word": "clinic",
+    "definition": "診所",
+    "category": "醫療、健康 (Health)"
+  },
+  {
+    "word": "diagnosis",
+    "definition": "診斷",
+    "category": "醫療、健康 (Health)"
+  },
+  {
+    "word": "insurance",
+    "definition": "保險",
+    "category": "醫療、健康 (Health)"
+  },
+  {
+    "word": "patient",
+    "definition": "病人",
+    "category": "醫療、健康 (Health)"
+  },
+  {
+    "word": "prescription",
+    "definition": "處方箋",
+    "category": "醫療、健康 (Health)"
+  },
+  {
+    "word": "admission",
+    "definition": "入場費",
+    "category": "娛樂 (Entertainment)"
+  },
+  {
+    "word": "broadcast",
+    "definition": "廣播；播送",
+    "category": "娛樂 (Entertainment)"
+  },
+  {
+    "word": "exhibition",
+    "definition": "展覽",
+    "category": "娛樂 (Entertainment)"
+  },
+  {
+    "word": "performance",
+    "definition": "表演；表現",
+    "category": "娛樂 (Entertainment)"
+  },
+  {
+    "word": "venue",
+    "definition": "場地",
+    "category": "娛樂 (Entertainment)"
+  },
+  {
+    "word": "boarding",
+    "definition": "登機",
+    "category": "旅遊 (Travel)"
+  },
+  {
+    "word": "departure",
+    "definition": "出發",
+    "category": "旅遊 (Travel)"
+  },
+  {
+    "word": "itinerary",
+    "definition": "行程表",
+    "category": "旅遊 (Travel)"
+  },
+  {
+    "word": "reservation",
+    "definition": "預訂",
+    "category": "旅遊 (Travel)"
+  },
+  {
+    "word": "transportation",
+    "definition": "交通工具",
+    "category": "旅遊 (Travel)"
+  },
+  {
+    "word": "appetizer",
+    "definition": "開胃菜",
+    "category": "餐飲 (Dining Out)"
+  },
+  {
+    "word": "beverage",
+    "definition": "飲料",
+    "category": "餐飲 (Dining Out)"
+  },
+  {
+    "word": "cuisine",
+    "definition": "料理",
+    "category": "餐飲 (Dining Out)"
+  },
+  {
+    "word": "entree",
+    "definition": "主菜",
+    "category": "餐飲 (Dining Out)"
+  },
+  {
+    "word": "reservation",
+    "definition": "訂位",
+    "category": "餐飲 (Dining Out)"
+  }
+]

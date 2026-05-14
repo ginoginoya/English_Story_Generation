@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星辰大海 | 多益單字探索</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Starfield Background -->
+    <div id="star-container"></div>
+
+    <!-- 核心容器 -->
+    <div class="container">
+        <div class="card glass fade-in" id="word-card">
+            <!-- [NEW] 單字卡內嵌工具列 -->
+            <div class="card-toolbar">
+                <div class="card-toolbar-left">
+                    <button class="control-btn" id="search-trigger" title="搜尋單字">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="card-toolbar-right">
+                    <!-- 語音選擇器 (移入卡片) -->
+                    <div class="voice-selector-custom" id="main-voice-selector">
+                        <div class="voice-trigger" title="切換語音音色">
+                            <i class="fas fa-user-audio"></i>
+                            <span class="selected-voice-name">隨機交替</span>
+                        </div>
+                        <div class="voice-menu glass hidden">
+                            <div class="voice-group-title">女聲 (Female)</div>
+                            <div class="voice-option" data-value="af_sky">Sky (清亮)</div>
+                            <div class="voice-option" data-value="af_bella">Bella (溫柔)</div>
+                            <div class="voice-option" data-value="af_sarah">Sarah (專業)</div>
+                            <div class="voice-separator"></div>
+                            <div class="voice-group-title">男聲 (Male)</div>
+                            <div class="voice-option" data-value="am_adam">Adam (清晰)</div>
+                            <div class="voice-option" data-value="am_michael">Michael (沉穩)</div>
+                            <div class="voice-option" data-value="am_echo">Echo (磁性)</div>
+                            <div class="voice-separator"></div>
+                            <div class="voice-option" data-value="random">🎲 隨機交替</div>
+                        </div>
+                    </div>
+
+                    <div class="control-separator"></div>
+
+                    <!-- 語速調節 (移入卡片) -->
+                    <div class="speed-controls" id="main-speed-controls">
+                        <div class="speed-icon-wrapper">
+                            <svg class="speed-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <path d="M20 20C21.1 18.2 22 16.2 22 14C22 8.5 17.5 4 12 4C6.5 4 2 8.5 2 14C2 16.2 2.9 18.2 4 20" />
+                                <line class="speed-needle" x1="12" y1="14" x2="17" y2="9" />
+                                <circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none" />
+                            </svg>
+                        </div>
+                        <button class="speed-btn speed-dec" title="減慢語速">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <span class="speed-label">1.0x</span>
+                        <button class="speed-btn speed-inc" title="加快語速">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="word-content">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div class="category-tag" id="category">載入中...</div>
+                    <div id="card-select-btn" class="card-select-btn" title="選取此單字">
+                        <i class="far fa-square"></i>
+                    </div>
+                </div>
+                <h1 class="word-main" id="word-text">Loading</h1>
+
+                <div class="phonetic-container">
+                    <div id="ipa-wrap">IPA <span id="ipa">/.../</span></div>
+                    <div id="kk-wrap">KK <span id="kk">/.../</span></div>
+                    <div id="speaker" style="cursor:pointer; color: var(--accent-color); margin-left: 0.5rem;">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div id="senses-container">
+                    <!-- Senses will be injected here -->
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="controls">
+                <button class="nav-btn" id="prev-btn" title="上一個">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="progress-info">
+                    <input type="number" id="jump-input" min="1" value="1"> / <span id="total-count">0</span>
+                </div>
+                <button class="nav-btn" id="next-btn" title="下一個">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="hidden">
+        <div class="search-modal">
+            <div class="search-header">
+                <input type="text" id="search-input" placeholder="搜尋單字...">
+                <div id="close-search"><i class="fas fa-times"></i></div>
+            </div>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <!-- List Overlay -->
+    <div id="list-overlay" class="hidden">
+        <div class="list-modal">
+            <div class="list-header">
+                <h2>所有單字 <span id="list-count">(0)</span></h2>
+                <div id="close-list"><i class="fas fa-times"></i></div>
+            </div>
+            <div id="all-words-grid"></div>
+        </div>
+    </div>
+
+    <!-- Restore Story Modal -->
+    <div id="restore-modal" class="modal hidden">
+        <div class="modal-content glass" style="max-width: 700px; height: 60vh;">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fas fa-file-import"></i>
+                    <h3>還原 AI 故事</h3>
+                </div>
+                <div class="modal-controls">
+                    <button id="close-restore-modal" class="close-btn">&times;</button>
+                </div>
+            </div>
+            <div class="story-body" style="display: flex; flex-direction: column;">
+                <p style="color: var(--text-secondary); margin-bottom: 10px;">請貼上之前複製的 AI 故事內容，或直接將 .txt 檔案拖曳至下方：</p>
+                <textarea id="restore-textarea" class="custom-scrollbar" placeholder="[STORY 1]&#10;[VOCABULARY]&#10;...&#10;[/VOCABULARY]&#10;..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button id="convert-restore-btn" class="btn-primary">轉換並還原</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Word Detail Modal (Highest z-index) -->
+    <div id="word-detail-modal" class="modal hidden">
+        <div class="word-detail-content glass">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fas fa-book-open"></i>
+                    <h3>單字解析</h3>
+                </div>
+                <div class="modal-controls">
+                    <button id="close-detail-modal" class="close-btn">&times;</button>
+                </div>
+            </div>
+            <div class="story-body">
+                <h1 class="word-main" id="detail-word-text" style="font-size: 2.5rem;">Word</h1>
+                <div class="phonetic-container" style="margin-bottom: 1rem;">
+                    <div>IPA <span id="detail-ipa">/.../</span></div>
+                    <div>KK <span id="detail-kk">/.../</span></div>
+                    <div id="detail-speaker" style="cursor:pointer; color: var(--accent-color); margin-left: 0.5rem;" title="發音">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                </div>
+                <div class="divider" style="margin: 1rem 0;"></div>
+                <div id="detail-senses-container">
+                    <!-- Senses will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 故事生成工具列 (恆常顯示且集中) -->
+    <div id="story-toolbar" class="story-toolbar">
+        <div class="toolbar-content focused">
+            <div class="toolbar-left-group">
+                <button class="toolbar-icon-btn" id="list-trigger" title="單字清單">
+                    <i class="fas fa-list-ul"></i>
+                </button>
+                <button class="toolbar-icon-btn" id="custom-story-trigger" title="自訂故事">
+                    <i class="fas fa-keyboard"></i>
+                </button>
+                <button class="toolbar-icon-btn" id="restore-trigger" title="還原紀錄">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+
+            <span id="selected-count">已選取 0 / 20 個單字</span>
+
+            <div class="toolbar-right-group">
+                <button id="ai-engine-trigger-toolbar" class="toolbar-icon-btn engine-btn" title="AI 生成引擎設定">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="engine-svg">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </button>
+                <button id="clear-selection" class="btn-secondary">清除</button>
+                <button id="generate-story" class="btn-primary">產生 AI 故事</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 故事顯示彈窗 -->
+    <div id="story-modal" class="modal hidden">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fas fa-magic"></i>
+                    <h3>AI 單字故事</h3>
+                </div>
+                <div class="modal-controls">
+                    <!-- 自定義語音選擇器 (故事視窗內) -->
+                    <div class="voice-selector-custom" id="modal-voice-selector">
+                        <div class="voice-trigger" title="切換語音音色">
+                            <i class="fas fa-user-audio"></i>
+                            <span class="selected-voice-name">隨機交替</span>
+                        </div>
+                        <div class="voice-menu glass hidden">
+                            <div class="voice-group-title">女聲 (Female)</div>
+                            <div class="voice-option" data-value="af_sky">Sky (女聲 - 清亮)</div>
+                            <div class="voice-option" data-value="af_bella">Bella (女聲 - 溫柔)</div>
+                            <div class="voice-option" data-value="af_sarah">Sarah (女聲 - 專業)</div>
+                            <div class="voice-separator"></div>
+                            <div class="voice-group-title">男聲 (Male)</div>
+                            <div class="voice-option" data-value="am_adam">Adam (男聲 - 清晰)</div>
+                            <div class="voice-option" data-value="am_michael">Michael (男聲 - 沉穩)</div>
+                            <div class="voice-option" data-value="am_echo">Echo (男聲 - 磁性)</div>
+                            <div class="voice-separator"></div>
+                            <div class="voice-option" data-value="random">🎲 隨機交替</div>
+                        </div>
+                    </div>
+                    
+                    <div class="control-separator"></div>
+                    
+                    <!-- 語速調節 (彈窗內) -->
+                    <div class="speed-controls" id="modal-speed-controls">
+                        <div class="speed-icon-wrapper">
+                            <svg class="speed-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <path d="M20 20C21.1 18.2 22 16.2 22 14C22 8.5 17.5 4 12 4C6.5 4 2 8.5 2 14C2 16.2 2.9 18.2 4 20" />
+                                <line class="speed-needle" x1="12" y1="14" x2="17" y2="9" />
+                                <circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none" />
+                            </svg>
+                        </div>
+                        <button class="speed-btn speed-dec" title="減慢語速">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <span class="speed-label">1.0x</span>
+                        <button class="speed-btn speed-inc" title="加快語速">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="control-separator"></div>
+                    
+                    <div class="font-size-controls">
+                        <button id="font-dec" title="縮小字體"><i class="fas fa-minus"></i></button>
+                        <span id="font-size-label">100%</span>
+                        <button id="font-inc" title="放大字體"><i class="fas fa-plus"></i></button>
+                    </div>
+
+                    <div class="control-separator"></div>
+                    
+                    <button id="toggle-wide-mode" class="control-btn" title="切換寬版/窄版">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </button>
+
+                    <div class="control-separator"></div>
+
+                    <button id="close-modal" class="close-btn">&times;</button>
+                </div>
+            </div>
+            <div class="story-body" id="story-text-container">
+                <!-- 生成進度提示 -->
+                <div id="story-loader" class="loader-container hidden">
+                    <div class="loader"></div>
+                    <span id="loader-message">AI 正在編寫故事中...</span>
+                </div>
+
+                <div id="stories-container">
+                    <!-- 動態生成的故事卡片會出現在這裡 -->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="copy-story" class="btn-primary">複製所有故事內容</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Story Modal -->
+    <div id="custom-story-modal" class="modal hidden">
+        <div class="modal-content glass" style="max-width: 700px; height: 60vh;">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>自訂單字故事</h3>
+                </div>
+                <div class="modal-controls">
+                    <button id="close-custom-modal" class="close-btn">&times;</button>
+                </div>
+            </div>
+            <div class="story-body" style="display: flex; flex-direction: column; gap: 15px;">
+                <div class="custom-mode-selector">
+                    <label style="color: var(--text-secondary); font-size: 0.9rem; margin-right: 10px;">生成模式：</label>
+                    <select id="custom-gen-mode" class="model-select" style="width: auto; padding: 5px 15px;">
+                        <option value="standard" selected>標準模式 (最多 20 字，分段故事)</option>
+                        <option value="unlimited">長篇無限制模式 (最多 100 字，單一故事)</option>
+                    </select>
+                </div>
+                <p id="custom-hint" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">這個框框是用來打英文單字的，最多可以輸入 20 個英文單字。單字之間請用空格或逗號隔開。</p>
+                <textarea id="custom-words-input" class="custom-scrollbar" placeholder="請在此輸入單字...例如: apple, banana, cat"></textarea>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 30px;">
+                <button id="ai-engine-trigger-custom" class="control-btn engine-btn" title="AI 生成引擎設定">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="engine-svg">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </button>
+                <button id="generate-custom-story-btn" class="btn-primary">產生 AI 故事</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Engine Settings Modal -->
+    <div id="ai-engine-modal" class="modal hidden">
+        <div class="modal-content glass" style="max-width: 500px;">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="modal-icon">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <h3>AI 生成引擎設定</h3>
+                </div>
+                <div class="modal-controls">
+                    <button id="close-engine-modal" class="close-btn">&times;</button>
+                </div>
+            </div>
+            <div class="settings-body">
+                <div class="setting-group">
+                    <label>本機模型選擇</label>
+                    <select id="engine-model-select" class="model-select" style="width: 100%;">
+                        <option value="gemma-4-e4b-it-text-only@q4_k_m" selected>Gemma 4 E4B (5.3GB 推薦配置)</option>
+                        <option value="qwen/qwen3-4b-2507">Qwen 3 4B (2507 測試版)</option>
+                        <option value="meta-llama-3.1-8b-instruct">Llama 3.1 8B</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <div class="setting-header">
+                        <label>創意溫度 (Temperature)</label>
+                        <span id="temp-value-label">1.0</span>
+                    </div>
+                    <input type="range" id="engine-temp-slider" class="styled-slider" min="0.1" max="1.5" step="0.1" value="1.0">
+                    <div class="setting-hints">
+                        <span>精準/固定</span>
+                        <span>發散/創意</span>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label>故事細節 (Story Detail)</label>
+                    <div class="segmented-control" id="detail-control">
+                        <div class="segment-option active" data-value="concise">精簡 (Concise)</div>
+                        <div class="segment-option" data-value="normal">一般 (Normal)</div>
+                        <div class="segment-option" data-value="detailed">詳細 (Detailed)</div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label>故事連貫性 (Coherence)</label>
+                    <div class="segmented-control" id="coherence-control">
+                        <div class="segment-option active" data-value="none">預設 (以前風格)</div>
+                        <div class="segment-option" data-value="normal">一般 (短文)</div>
+                        <div class="segment-option" data-value="strong">強 (嚴密情節)</div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label>考試針對性 (Exam Focus)</label>
+                    <div class="segmented-control" id="exam-control">
+                        <div class="segment-option active" data-value="none">無</div>
+                        <div class="segment-option" data-value="toeic">TOEIC</div>
+                        <div class="segment-option" data-value="toefl">TOEFL</div>
+                        <div class="segment-option" data-value="ielts">IELTS</div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label>翻譯模式 (Translation Mode)</label>
+                    <div class="segmented-control" id="translation-control">
+                        <div class="segment-option active" data-value="google">Google 翻譯</div>
+                        <div class="segment-option" data-value="ai">AI 深度翻譯</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="justify-content: flex-end;">
+                <button id="apply-engine-settings" class="btn-primary">套用並關閉</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
