@@ -5,33 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>星辰大海 | 多益單字探索</title>
+    <!-- 引入主樣式表 -->
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for icons -->
+    <!-- 引入 FontAwesome 圖示庫 (用於搜尋、播放、導航圖示) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Starfield Background -->
+    <!-- 星空背景容器 (由 JS 動態生成星星並應用 CSS 動畫) -->
     <div id="star-container"></div>
 
-    <!-- 核心容器 -->
+    <!-- 核心應用程式容器 -->
     <div class="container">
+        <!-- 單字展示卡片 (具備玻璃擬態效果與淡入動畫) -->
         <div class="card glass fade-in" id="word-card">
-            <!-- [NEW] 單字卡內嵌工具列 -->
+            
+            <!-- 單字卡頂部工具列：包含搜尋與語音設定 -->
             <div class="card-toolbar">
                 <div class="card-toolbar-left">
+                    <!-- 搜尋按鈕：開啟搜尋蓋版 -->
                     <button class="control-btn" id="search-trigger" title="搜尋單字">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
                 <div class="card-toolbar-right">
-                    <!-- 語音選擇器 (移入卡片) -->
+                    <!-- 自定義語音選擇器：讓用戶切換不同音色 (Sky, Bella, Adam 等) -->
                     <div class="voice-selector-custom" id="main-voice-selector">
                         <div class="voice-trigger" title="切換語音音色">
                             <i class="fas fa-user-audio"></i>
                             <span class="selected-voice-name">隨機交替</span>
                         </div>
+                        <!-- 下拉選單：包含性別分組與隨機模式 -->
                         <div class="voice-menu glass hidden">
                             <div class="voice-group-title">女聲 (Female)</div>
                             <div class="voice-option" data-value="af_sky">Sky (清亮)</div>
@@ -49,9 +54,10 @@
 
                     <div class="control-separator"></div>
 
-                    <!-- 語速調節 (移入卡片) -->
+                    <!-- 語速調節組：透過計數器調整 TTS 播放速度 -->
                     <div class="speed-controls" id="main-speed-controls">
                         <div class="speed-icon-wrapper">
+                            <!-- 速度計 SVG 圖示，指針會隨語速動態旋轉 -->
                             <svg class="speed-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                                 <path d="M20 20C21.1 18.2 22 16.2 22 14C22 8.5 17.5 4 12 4C6.5 4 2 8.5 2 14C2 16.2 2.9 18.2 4 20" />
                                 <line class="speed-needle" x1="12" y1="14" x2="17" y2="9" />
@@ -69,18 +75,24 @@
                 </div>
             </div>
 
+            <!-- 單字核心內容區塊 -->
             <div id="word-content">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <!-- 單字類別標籤 (如：商務, 旅行) -->
                     <div class="category-tag" id="category">載入中...</div>
+                    <!-- 收藏/選取按鈕：點擊後會加入待生成故事的清單 -->
                     <div id="card-select-btn" class="card-select-btn" title="選取此單字">
                         <i class="far fa-square"></i>
                     </div>
                 </div>
+                <!-- 主單字文字 -->
                 <h1 class="word-main" id="word-text">Loading</h1>
 
+                <!-- 音標與發音區塊 -->
                 <div class="phonetic-container">
                     <div id="ipa-wrap">IPA <span id="ipa">/.../</span></div>
                     <div id="kk-wrap">KK <span id="kk">/.../</span></div>
+                    <!-- 喇叭圖示：觸發 TTS 語音朗讀 -->
                     <div id="speaker" style="cursor:pointer; color: var(--accent-color); margin-left: 0.5rem;">
                         <i class="fas fa-volume-up"></i>
                     </div>
@@ -88,17 +100,19 @@
 
                 <div class="divider"></div>
 
+                <!-- 單字釋義容器：由 JS 根據資料庫數據動態填充多個釋義與例句 -->
                 <div id="senses-container">
                     <!-- Senses will be injected here -->
                 </div>
             </div>
 
-            <!-- Navigation Controls -->
+            <!-- 底部導航控制：翻頁與跳轉 -->
             <div class="controls">
                 <button class="nav-btn" id="prev-btn" title="上一個">
                     <i class="fas fa-arrow-left"></i>
                 </button>
                 <div class="progress-info">
+                    <!-- 頁碼跳轉輸入框 -->
                     <input type="number" id="jump-input" min="1" value="1"> / <span id="total-count">0</span>
                 </div>
                 <button class="nav-btn" id="next-btn" title="下一個">
@@ -108,29 +122,31 @@
         </div>
     </div>
 
-    <!-- Search Overlay -->
+    <!-- 搜尋蓋版 (Overlay)：提供全庫單字快速檢索 -->
     <div id="search-overlay" class="hidden">
         <div class="search-modal">
             <div class="search-header">
                 <input type="text" id="search-input" placeholder="搜尋單字...">
                 <div id="close-search"><i class="fas fa-times"></i></div>
             </div>
+            <!-- 搜尋結果顯示區域 -->
             <div id="search-results"></div>
         </div>
     </div>
 
-    <!-- List Overlay -->
+    <!-- 所有單字列表蓋版：以網格形式展示所有單字 -->
     <div id="list-overlay" class="hidden">
         <div class="list-modal">
             <div class="list-header">
                 <h2>所有單字 <span id="list-count">(0)</span></h2>
                 <div id="close-list"><i class="fas fa-times"></i></div>
             </div>
+            <!-- 網格容器：展示單字並支援直接點選選取 -->
             <div id="all-words-grid"></div>
         </div>
     </div>
 
-    <!-- Restore Story Modal -->
+    <!-- 還原故事彈窗：用於貼上舊故事文本或拖曳檔案進行內容解析 -->
     <div id="restore-modal" class="modal hidden">
         <div class="modal-content glass" style="max-width: 700px; height: 60vh;">
             <div class="modal-header">
@@ -152,7 +168,7 @@
         </div>
     </div>
 
-    <!-- Word Detail Modal (Highest z-index) -->
+    <!-- 單字詳細解析彈窗：當在故事中點擊標註單字時顯示 -->
     <div id="word-detail-modal" class="modal hidden">
         <div class="word-detail-content glass">
             <div class="modal-header">
@@ -165,6 +181,7 @@
                 </div>
             </div>
             <div class="story-body">
+                <!-- 詳細內容與主卡片類似，但專用於故事內的彈窗顯示 -->
                 <h1 class="word-main" id="detail-word-text" style="font-size: 2.5rem;">Word</h1>
                 <div class="phonetic-container" style="margin-bottom: 1rem;">
                     <div>IPA <span id="detail-ipa">/.../</span></div>
@@ -181,26 +198,29 @@
         </div>
     </div>
 
-
-
-    <!-- 故事生成工具列 (恆常顯示且集中) -->
+    <!-- 底部故事生成工具列：固定於螢幕底部，管理已選取的單字並觸發 AI -->
     <div id="story-toolbar" class="story-toolbar">
         <div class="toolbar-content focused">
             <div class="toolbar-left-group">
+                <!-- 開啟全庫網格列表 -->
                 <button class="toolbar-icon-btn" id="list-trigger" title="單字清單">
                     <i class="fas fa-list-ul"></i>
                 </button>
+                <!-- 開啟自訂輸入模式 (直接打字輸入單字) -->
                 <button class="toolbar-icon-btn" id="custom-story-trigger" title="自訂故事">
                     <i class="fas fa-keyboard"></i>
                 </button>
+                <!-- 開啟還原模式 -->
                 <button class="toolbar-icon-btn" id="restore-trigger" title="還原紀錄">
                     <i class="fas fa-copy"></i>
                 </button>
             </div>
 
+            <!-- 計數器：顯示目前選中的單字數量 -->
             <span id="selected-count">已選取 0 / 20 個單字</span>
 
             <div class="toolbar-right-group">
+                <!-- AI 引擎進階設定 (溫度、模型、場景) -->
                 <button id="ai-engine-trigger-toolbar" class="toolbar-icon-btn engine-btn" title="AI 生成引擎設定">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="engine-svg">
                         <circle cx="12" cy="12" r="3"></circle>
@@ -208,12 +228,13 @@
                     </svg>
                 </button>
                 <button id="clear-selection" class="btn-secondary">清除</button>
+                <!-- 核心功能：發送選中單字至後端 AI 生成故事 -->
                 <button id="generate-story" class="btn-primary">產生 AI 故事</button>
             </div>
         </div>
     </div>
 
-    <!-- 故事顯示彈窗 -->
+    <!-- 故事顯示彈窗：展示 AI 生成的最終結果 -->
     <div id="story-modal" class="modal hidden">
         <div class="modal-content glass">
             <div class="modal-header">
@@ -222,13 +243,14 @@
                     <h3>AI 單字故事</h3>
                 </div>
                 <div class="modal-controls">
-                    <!-- 自定義語音選擇器 (故事視窗內) -->
+                    <!-- 彈窗內的語音控制群組 (語音選色與語速) -->
                     <div class="voice-selector-custom" id="modal-voice-selector">
                         <div class="voice-trigger" title="切換語音音色">
                             <i class="fas fa-user-audio"></i>
                             <span class="selected-voice-name">隨機交替</span>
                         </div>
                         <div class="voice-menu glass hidden">
+                            <!-- 語音清單與主卡片同步 -->
                             <div class="voice-group-title">女聲 (Female)</div>
                             <div class="voice-option" data-value="af_sky">Sky (女聲 - 清亮)</div>
                             <div class="voice-option" data-value="af_bella">Bella (女聲 - 溫柔)</div>
@@ -245,7 +267,6 @@
                     
                     <div class="control-separator"></div>
                     
-                    <!-- 語速調節 (彈窗內) -->
                     <div class="speed-controls" id="modal-speed-controls">
                         <div class="speed-icon-wrapper">
                             <svg class="speed-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -265,6 +286,7 @@
 
                     <div class="control-separator"></div>
                     
+                    <!-- 故事文字大小縮放功能 -->
                     <div class="font-size-controls">
                         <button id="font-dec" title="縮小字體"><i class="fas fa-minus"></i></button>
                         <span id="font-size-label">100%</span>
@@ -273,6 +295,7 @@
 
                     <div class="control-separator"></div>
                     
+                    <!-- 視窗版型切換：寬版 (雙欄顯示) 或 窄版 (單欄顯示) -->
                     <button id="toggle-wide-mode" class="control-btn" title="切換寬版/窄版">
                         <i class="fas fa-arrows-alt-h"></i>
                     </button>
@@ -283,24 +306,26 @@
                 </div>
             </div>
             <div class="story-body" id="story-text-container">
-                <!-- 生成進度提示 -->
+                <!-- 生成進度提示動畫 -->
                 <div id="story-loader" class="loader-container hidden">
                     <div class="loader"></div>
                     <span id="loader-message">AI 正在編寫故事中...</span>
                 </div>
 
+                <!-- 故事卡片動態展示區 -->
                 <div id="stories-container">
                     <!-- 動態生成的故事卡片會出現在這裡 -->
                 </div>
             </div>
 
             <div class="modal-footer">
+                <!-- 一鍵複製功能：方便用戶轉存至筆記 -->
                 <button id="copy-story" class="btn-primary">複製所有故事內容</button>
             </div>
         </div>
     </div>
 
-    <!-- Custom Story Modal -->
+    <!-- 自訂單字輸入彈窗：手動輸入非資料庫內的單字進行故事生成 -->
     <div id="custom-story-modal" class="modal hidden">
         <div class="modal-content glass" style="max-width: 700px; height: 60vh;">
             <div class="modal-header">
@@ -320,7 +345,7 @@
                         <option value="unlimited">長篇無限制模式 (最多 100 字，單一故事)</option>
                     </select>
                 </div>
-                <p id="custom-hint" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">這個框框是用來打英文單字的，最多可以輸入 20 個英文單字。單字之間請用空格或逗號隔開。</p>
+                <p id="custom-hint" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">此功能支援手動輸入英文單字，AI 將根據輸入的詞彙自動構思情節。</p>
                 <textarea id="custom-words-input" class="custom-scrollbar" placeholder="請在此輸入單字...例如: apple, banana, cat"></textarea>
             </div>
             <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 30px;">
@@ -335,7 +360,7 @@
         </div>
     </div>
 
-    <!-- AI Engine Settings Modal -->
+    <!-- AI 引擎進階設定彈窗：調整 AI 模型行為與生成策略 -->
     <div id="ai-engine-modal" class="modal hidden">
         <div class="modal-content glass" style="max-width: 500px;">
             <div class="modal-header">
@@ -351,6 +376,7 @@
                 </div>
             </div>
             <div class="settings-body">
+                <!-- 模型選擇：切換不同的 LM Studio 模型 -->
                 <div class="setting-group">
                     <label>本機模型選擇</label>
                     <select id="engine-model-select" class="model-select" style="width: 100%;">
@@ -360,6 +386,7 @@
                     </select>
                 </div>
                 
+                <!-- 溫度設定：控制故事的隨機性與創造力 -->
                 <div class="setting-group">
                     <div class="setting-header">
                         <label>創意溫度 (Temperature)</label>
@@ -372,6 +399,7 @@
                     </div>
                 </div>
 
+                <!-- 分段控制：故事詳細度 -->
                 <div class="setting-group">
                     <label>故事細節 (Story Detail)</label>
                     <div class="segmented-control" id="detail-control">
@@ -381,6 +409,7 @@
                     </div>
                 </div>
 
+                <!-- 分段控制：故事連貫性策略 -->
                 <div class="setting-group">
                     <label>故事連貫性 (Coherence)</label>
                     <div class="segmented-control" id="coherence-control">
@@ -390,6 +419,7 @@
                     </div>
                 </div>
 
+                <!-- 分段控制：針對不同考試調整 Prompt -->
                 <div class="setting-group">
                     <label>考試針對性 (Exam Focus)</label>
                     <div class="segmented-control" id="exam-control">
@@ -400,6 +430,7 @@
                     </div>
                 </div>
 
+                <!-- 翻譯引擎選擇 -->
                 <div class="setting-group">
                     <label>翻譯模式 (Translation Mode)</label>
                     <div class="segmented-control" id="translation-control">
@@ -414,6 +445,7 @@
         </div>
     </div>
 
+    <!-- 引入主邏輯 JS 檔案 -->
     <script src="app.js"></script>
 </body>
 
